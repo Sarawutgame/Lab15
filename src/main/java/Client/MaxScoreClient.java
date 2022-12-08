@@ -1,16 +1,12 @@
 package Client;
-
 import com.proto.maxscore.MaxScoreGrpc;
 import com.proto.maxscore.MaxScoreRequest;
 import com.proto.maxscore.MaxScoreResponse;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
-
-import java.util.Date;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-
 public class MaxScoreClient {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder
@@ -43,9 +39,7 @@ public class MaxScoreClient {
                 e.printStackTrace();
             }
         }
-
         stream.onCompleted();
-
         try {
             latch.await(20L, TimeUnit.SECONDS);
         }catch (InterruptedException e) {

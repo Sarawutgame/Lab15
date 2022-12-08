@@ -1,14 +1,11 @@
 package Server;
-
 import com.proto.maxscore.MaxScoreGrpc;
 import com.proto.maxscore.MaxScoreRequest;
 import com.proto.maxscore.MaxScoreResponse;
 import io.grpc.stub.StreamObserver;
-
 public class MaxScoreServiceImpl extends MaxScoreGrpc.MaxScoreImplBase {
     @Override
     public StreamObserver<MaxScoreRequest> findMaxScore(StreamObserver<MaxScoreResponse> responseObserver) {
-//        return super.findMaxScore(responseObserver);
         StreamObserver<MaxScoreRequest> stream = new StreamObserver<MaxScoreRequest>() {
             int count = 0;
             int maxScore = 0;

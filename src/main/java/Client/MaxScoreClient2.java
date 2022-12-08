@@ -52,10 +52,7 @@ public class MaxScoreClient2 {
                 e.printStackTrace();
             }
         }
-
-
         stream.onCompleted();
-
         try {
             latch.await(20L, TimeUnit.SECONDS);
         }catch (InterruptedException e) {
